@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="RestRunner.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestRunner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <RelativePanel Margin="20">
+            <ComboBox x:Name="comboBox" SelectedIndex="0" IsSynchronizedWithCurrentItem="False" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Margin="0" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                <ComboBoxItem Content="POST"/>
+                <ComboBoxItem Content="GET"/>
+            </ComboBox>
+            <TextBox x:Name="UrlInput" TextWrapping="Wrap" Margin="10,0" RelativePanel.RightOf="comboBox" RelativePanel.AlignTopWithPanel="True" RelativePanel.LeftOf="GoBtn" InputScope="Url" PlaceholderText="Url here"/>
+            <Button x:Name="GoBtn" Content="Go" Click="button_Click" HorizontalAlignment="Right" Margin="0" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWithPanel="True" VerticalAlignment="Stretch"/>
+            <TextBox x:Name="ResultOutput" RelativePanel.Below="cbWrap" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True" Margin="0,10,0,0" BorderThickness="1" PreventKeyboardDisplayOnProgrammaticFocus="True" TextAlignment="Left"/>
+            <CheckBox x:Name="cbWrap" Content="Wrap Output" HorizontalAlignment="Left" VerticalAlignment="Top" RelativePanel.Below="GoBtn" RelativePanel.AlignRightWithPanel="True" Margin="0,20,0,0" Checked="cbWrap_Checked" Unchecked="cbWrap_Unchecked"/>
+        </RelativePanel>
+    </Grid>
+</Page>
